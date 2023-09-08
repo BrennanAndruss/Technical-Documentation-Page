@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C++ Cheatsheet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>C++ Cheatsheet</header>
+        <ul>
+            <li>
+                <a class="nav-link" href="#Introduction">Introduction</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Hello_World">Hello World</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Basic_Syntax">Basic Syntax</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Comments">Comments</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Input_and_Output">Input and Output</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Variables">Variables</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Data_Types">Data Types</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Conditional_Statements">Conditional Statements</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Loops">Loops</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Reference">Reference</a>
+            </li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p>
+                C++ is a programming language developed by Bjarne Stroustrup at Bell Labs in 1979. C++ was designed as
+                an extension to the C language, which was well-known for its efficiency and cross-platform portability
+                at the time. C++ adds object-oriented programming and many other ne wfeatures to C.
+            </p>
+        </section>
+        <section class="main-section" id="Hello_World">
+            <header>Hello World</header>
+            <p>
+                To get started with writing C++, let's create our first C++ program:
+            </p>
+            <div class="code">
+                <code>
+            #include &lt;iostream&gt;<br>
+            <br>
+            int main() {
+            <div class="indent">
+              std::cout &lt;&lt; "Hello World";<br>
+              return 0;
+            </div>
+            }
+          </code>
+            </div>
+        </section>
+        <section class="main-section" id="Basic_Syntax">
+            <header>Basic Syntax</header>
+            <p>
+                The <i>include</i> keyword is used to import libraries. Standard library names must be enclosed in &lt;
+                &gt;, whereas user-defined library names must be enclosed in " ".
+            </p>
+            <div class="code">
+                <code>
+            #include &lt;iostream&gt;
+          </code>
+            </div>
+            <p>
+                Every C++ program must have a <i>main</i> function in order to run. Code statements are written inside
+                the <i>main</i> function.
+            </p>
+            <div class="code">
+                <code>
+            int main() {
+            <div class="indent">
+              // Code statements written here
+            </div>
+            }
+          </code>
+            </div>
+        </section>
+        <section class="main-section" id="Comments">
+            <header>Comments</header>
+            <p>
+                Comments are notes left by the programmer that describes C++ code in plain English. Since comments are
+                ignored by the compiler, they can also be used to prevent code execution (AKA "comment out code").
+            </p>
+            <p>
+                Single-line comments are created with <i>//</i>. The compiler ignores any text after <i>//</i> on the
+                same line.
+            <p>
+            <div class="code">
+                <code>
+            // Prints: Hello world<br>
+            std::cout &lt;&lt; "Hello World";
+          </code>
+            </div>
+            <p>
+                Multi-line comments begin with <i>/*</i> and end with <i>*/</i>. The compiler igonres any text in
+                between.
+            </p>
+            <div class="code">
+                <code>
+            /*<br>
+            Prints:<br>
+            Hello World<br>
+            */<br>
+            std::cout &lt;&lt; "Hello World";
+          </code>
+            </div>
+        </section>
+        <section class="main-section" id="Input_and_Output">
+            <header>Input and Output</header>
+            <p>
+                <i>iostream</i> is part of the C++ standard library that deals with basic input and output. To use the
+                functionality defined within the library, we need to include the <i>iostream</i> header at the beginning
+                of our program:
+            </p>
+            <div class="code">
+                <code>
+            #include &lt;iostream&gt;
+          </code>
+            </div>
+            <p>
+                <i>std::cin</i> can be used together with the extraction operator <i>&gt;&gt;</i> to read input from the
+                user:
+            </p>
+            <div class="code">
+                <code>
+            int var;<br>
+            std::cin &gt;&gt; var;
+          </code>
+            </div>
+            <p>
+                <i>std::cout</i> is used together with the insertation operator <i>&lt;&lt;</i> to print values on the
+                console:
+            </p>
+            <div class="code">
+                <code>
+            std::cout &lt;&lt; "Hello World";
+          </code>
+            </div>
+            <p>
+                A new line can be inserted by adding <i>\n</i> in the text to be printed. The <i>\n</i> will not show up
+                in the output because it is an escape sequence. <i>std::endl</i> can also be used to achieve the same
+                result:
+            </p>
+            <div class="code">
+                <code>
+            std::cout &lt;&lt; "Hello World\n";<br>
+            std::cout &lt;&lt; "Hello World" &lt;&lt; std::endl;
+          </code>
+            </div>
+        </section>
+        <section class="main-section" id="Variables">
+            <header>Variables</header>
+            <p>
+                A variable is a name that represents a particular piece of the computer's memory that has been set aside
+                for storing, retrieving, and using data.
+            </p>
+            <p>
+                In order to create a variable, three piece of information need to be present:
+            </p>
+            <ul>
+                <li>The type of data the variable will store.</li>
+                <li>The unique name of the variable. Names cannot start with a number and cannot be a C++ keyword.</li>
+                <li>The value the variable will store. This value must math the type of the variable.</li>
+            </ul>
+            <p>
+                Declaration means to create a variable and assign a value to it. This is also called initialization.
+            </p>
+            <div class="code">
+                <code>
+            type name = value;
+          </code>
+            </div>
+            <p>
+                To assign or change the value of an existing variable, state the name of the variable followed by the
+                assignment operator <i>=</i> and the new value:
+            </p>
+            <div class="code">
+                <code>
+            name = new_value;
+          </code>
+            </div>
+            <p>
+                Multiple variables of the same type can be declared in a single statement using a comma-separated list:
+            </p>
+            <div class="code">
+                <code>
+            int a = 1, b = 2, c = 3;
+          </code>
+            </div>
+        </section>
+        <section class="main-section" id="Data_Types">
+            <header>Data Types</header>
+            <p>
+                A variable in C++ must be assigned a specific type. Type is important because it tells the complier how
+                to interpret the content of a variable.
+            </p>
+            <p>
+                <i>int</i> stores whole numbers without decimals. An <i>int</i> variable requires 4 bytes of memory
+                space and ranges from -2³¹ to 2³¹.
+            </p>
+            <div class="code">
+                <code>
+            int age = 18;<br>
+          </code>
+            </div>
+            <p>
+                <i>double</i> stores floating-point numbers with decimals. A <i>double</i> variable requires 8 bytes of
+                memory space and is sufficient for storing up to 15 decimal digits.
+            </p>
+            <div class="code">
+                <code>
+            double pi = 3.1415;
+          </code>
+            </div>
+            <p>
+                <i>char</i> stores a single character surrounded by single quotes <i>' '</i>. A <i>char</i> variable
+                requires 1 byte of memory space.
+            </p>
+            <div class="code">
+                <code>
+            char grade = 'a';
+          </code>
+            </div>
+            <p>
+                <i>std::string</i> stores a sequence of characters surrounded by double quotes <i>" "</i>. The
+                <i>&lt;string&gt;</i> library must be included before <i>std::string</i> can be used.
+            </p>
+            <div class="code">
+                <code>
+            #include &lt;string&gt;<br>
+            <br>
+            std::string message = "Hello World";
+          </code>
+            </div>
+            <p>
+                <i>bool</i> stores <i>true</i> or <i>false</i> values. A <i>bool</i> variable requires 1 byte of memory
+                space.
+            </p>
+            <div class="code">
+                <code>
+            bool certified = true;
+          </code>
+            </div>
+        </section>
+        <section class="main-section" id="Conditional_Statements">
+            <header>Conditional Statements</header>
+            <p>
+                A conditional statement causes a sequence of code to execute based on the value of the given
+                <i>boolean</i> expressions.
+            </p>
+            <p>
+                An <i>if</i> statement is used to test an expression for truth. If the condition evaluates to
+                <i>true</i>, then the code within the <i>if</i> block is executed; otherwise, it will be skipped:
+            </p>
+            <div class="code">
+                <code>
+            if (condition) {
+            <div class="indent">
+              // Code to run if  condition is true
+            </div>
+            }
+          </code>
+            </div>
+            <p>
+                An <i>else</i> statement can be added after an <i>if</i> statement. Opposite to <i>if</i>, the code
+                within the <i>else</i> block will only be executed if the condition is <i>false</i>:
+            </p>
+            <div class="code">
+                <code>
+            if (condition) {
+            <div class="indent">
+              // Code to run if condition is true
+            </div>
+            }<br>
+            else {
+            <div class="indent">
+              // Code to run if condition is false
+            </div>
+            }
+          </code>
+            </div>
+            <p>
+                One or more <i>else if</i> statements can be added in-between the <i>if</i> and <i>else</i> clauses to
+                specify new conditions. The code within the <i>else if</i> block will only execute if the previous
+                conditions evaluate to <i>false</i>:
+            </p>
+            <div class="code">
+                <code>
+            if (condition1) {
+            <div class="indent">
+              // Code to run if condition1 is true
+            </div>
+            }<br>
+            else if (condition 2) {
+            <div class="indent">
+              // Code to run if condition1 is false and condition2 is true
+            </div>
+            }<br>
+            else {
+            <div class="indent">
+              // Code to run if both condition1 and condition2 are false
+            </div>
+            }
+          </code>
+            </div>
+        </section>
+        <section class="main-section" id="Loops">
+            <header>Loops</header>
+            <p>
+                A loop is a control flow construct that repeatedly executes some code. Loops are great for tasks that
+                have to repeat multiple times in a row.
+            </p>
+            <p>
+                The <i>while</i> loop repeats a block of code as long as the given boolean condition is <i>true</i>:
+            </p>
+            <div class="code">
+                <code>
+            // Prints: 12345<br>
+            int count = 1;<br>
+            while (count <= 5) {
+            <div class="indent">
+              std::cout &lt;&lt; count;<br>
+              count = count + 1;
+            </div>
+            }
+          </code>
+            </div>
+            <p>
+                The <i>do-while</i> loop is very similar to a <i>while</i> loop, but will always execute at least once,
+                even if the condition is initially <i>false</i>:
+            </p>
+            <div class="code">
+                <code>
+            int price = 300;<br>
+            do {
+            <div class="indent">
+              std::cout &lt;&lt; "Too expensive!";
+            </div>
+            } while (price > 500);
+          </code>
+            </div>
+            <p>
+                The <i>for</i> loop should be implemented when the programmer knows exactly how many times a block of
+                code needs to be repeated.
+            </p>
+            <p>
+                The <i>for</i> loop statement is made up of three parts, each separated by <i>;</i>:
+            </p>
+            <ul>
+                <li>The initialization of a counter variable. This is only executed once before the execution of the
+                    code block.</li>
+                <li>The condition for executing the code block as long as it's true.</li>
+                <li>The increment/decrement of the counter variable</li>
+            </ul>
+            <div class="code">
+                <code>
+            // Prints: 12345<br>
+            for (int i = 1; i <= 5; i++) {
+            <div class="indent">
+              std::cout &lt;&lt; i;
+            </div>
+            }
+          </code>
+            </div>
+        </section>
+        <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <p>
+                Explanations and code snippits adapted from the Codecademy course, <a
+                    href="https://www.codecademy.com/enrolled/courses/c-plus-plus-for-programmers">C++ for
+                    Programmers</a>
+            </p>
+        </section>
+    </main>
+</body>
+
+</html>
